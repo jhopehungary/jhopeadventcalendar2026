@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102d24">
+  <title>24 Days of Hope | Coming Soon</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #fff8ed;
+      background:
+        radial-gradient(ellipse at center, #24513d 0%, #163b2d 48%, #0b211a 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+    }
+
+    .snow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, #ffffffbb 50%, transparent),
+        radial-gradient(2px 2px at 90px 120px, #ffffff99 50%, transparent),
+        radial-gradient(3px 3px at 150px 70px, #ffffffaa 50%, transparent),
+        radial-gradient(2px 2px at 220px 180px, #ffffff99 50%, transparent);
+      background-size: 260px 220px;
+      animation: snowfall 12s linear infinite;
+    }
+
+    @keyframes snowfall {
+      from { background-position: 0 0; }
+      to { background-position: 80px 440px; }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: min(90%, 650px);
+      padding: 55px 28px;
+      border: 1px solid rgba(220, 190, 120, .45);
+      border-radius: 22px;
+      background: rgba(7, 29, 22, .48);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, .25);
+    }
+
+    .eyebrow {
+      color: #dfc17e;
+      font: 700 .75rem/1.5 Arial, sans-serif;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 22px 0 12px;
+      color: #f5dfad;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    h1 span {
+      display: block;
+      font-style: italic;
+    }
+
+    .message {
+      margin: 25px auto;
+      max-width: 470px;
+      color: #f4eadb;
+      font: 1rem/1.8 Arial, sans-serif;
+    }
+
+    .heart {
+      margin-top: 30px;
+      color: #dfc17e;
+      font-size: 1.5rem;
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: #c6d4c8;
+      font: .75rem Arial, sans-serif;
+      letter-spacing: .08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <main class="content">
+    <p class="eyebrow">j-hope Hungary presents</p>
+
+    <h1>24 Days of <span>Hope</span></h1>
+
+    <p class="message">
+      A little holiday magic is on its way!<br><br>
+      We're preparing something special for you.
+      Our Advent Calendar will be back soon.
+    </p>
+
+    <p class="heart">♡</p>
+
+    <p class="footer">
+      THANK YOU FOR YOUR PATIENCE
+    </p>
+  </main>
+</body>
+</html>
