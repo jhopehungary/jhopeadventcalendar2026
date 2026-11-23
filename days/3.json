@@ -1,0 +1,22 @@
+
+{
+  "day": 3,
+  "title": "The Dancer Before the Idol",
+  "story": "Long before the world knew him as j-hope, Jung Hoseok had already built a reputation in the dance community of Gwangju.\n\nAs a member of the underground dance crew NEURON, he performed under the name Smile Hoya. He wasn't simply practicing dance in a studio anymore. He was taking part in the local street dance scene, performing, competing, and developing his own identity as a dancer.\n\nPopping was one of his favorite styles, especially Boogaloo, a style known for its expressive body movements, isolations, and fluid way of dancing. He loved it so much that he sometimes practiced throughout the night. The dancers around him helped him develop his technique and explore different ways of moving to music.\n\nAnd his dedication brought results. In a 2013 interview, j-hope looked back on his pre-debut years and recalled receiving numerous awards for dancing in Gwangju. He also mentioned winning an underground dance battle and performing at a festival.\n\nHis reputation was not limited to his own memories. In the same interview, V recalled that people at his school already knew j-hope as the talented dancer from a dance academy in Gwangju. Even before BTS debuted, his dancing had made an impression on people around him.\n\nThese experiences gave him something that went far beyond technical skills. He had learned how to perform, how to compete, how to express himself through movement, and how to command attention on stage.\n\nWhen he eventually joined Big Hit, he brought all of that experience with him. He was entering a new world as a trainee, but dance was already the field in which he had years of experience and confidence.\n\nHe wasn't an idol who became a dancer. He was a dancer who became an idol.\n\nBefore the world knew j-hope, the dance community already knew Smile Hoya.",
+  "christmasImage": "images/3.jpg",
+  "surpriseTitle": "A Dream in Motion",
+  "surpriseDescription": "Before the world knew him as j-hope, Jung Hoseok was already working hard to become the dancer he dreamed of being. Enjoy this glimpse of his younger dancing days in Gwangju!",
+  "surpriseUrl": "videos/3_dance.mp4",
+  "surpriseLabel": "Watch / listen",
+  "challenge": {
+    "enabled": true,
+    "question": "Which achievements did j-hope recall from his pre-debut dance years?",
+    "options": [
+      "Winning an underground dance battle and performing at a festival.",
+      "Winning a singing competition and releasing a solo album.",
+      "Becoming a dance instructor in Seoul."
+    ],
+    "answer": "Winning an underground dance battle and performing at a festival.",
+    "explanation": "In a 2013 interview, j-hope recalled receiving many dance awards in Gwangju, winning an underground dance battle, and performing at a festival."
+  }
+}

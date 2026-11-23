@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4b101b">
+  <meta name="description" content="24 Days of Hope – a j-hope advent calendar by j-hope Hungary.">
+  <title>24 Days of Hope | j-hope Hungary</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <body>
+  <div class="snow-layer" aria-hidden="true"></div>
+  <div class="christmas-decor christmas-decor-left" aria-hidden="true"></div>
+  <div class="christmas-decor christmas-decor-right" aria-hidden="true"></div>
+
+<header class="site-header">
+  <p class="eyebrow">A 24-day journey</p>
+  <h1>j-hope <span>Advent</span> Calendar</h1>
+  <p class="subtitle">A Story of Dreams, Music and Hope</p>
+  <p class="intro">
+    Let's celebrate 24 days of j-hope's incredible journey –<br>
+    from Gwangju to the world, and beyond. ♡
+  </p>
+</header>
+
+  <main>
+    <section class="calendar-section" aria-labelledby="calendar-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">December 1–24</p>
+          <h2 id="calendar-heading">Open a little piece of hope</h2>
+        </div>
+        <p class="progress" id="progress">0 / 24 opened</p>
+      </div>
+      <div class="calendar" id="calendar" aria-label="Advent calendar doors"></div>
+    </section>
+    <div class="footer-note">
+  <p class="christmas-greeting">
+    MERRY CHRISTMAS ♡ AND HAPPY HOLIDAYS!
+  </p>
+  <p>
+    A fan-made project by j-hope Hungary.
+    Not affiliated with BIGHIT MUSIC or HYBE.
+  </p>
+</div>
+  </main>
+
+  <dialog id="day-dialog" class="day-dialog">
+    <button class="close-button" id="close-dialog" aria-label="Close">×</button>
+    <p class="eyebrow" id="day-number">DAY 01</p>
+    <h2 id="day-title"></h2>
+    <p class="story" id="day-story"></p>
+    <section class="photo-panel" id="photo-panel" hidden>
+  <p class="eyebrow">Daily Surprise Photo</p>
+  <img
+    id="christmas-photo"
+    class="christmas-photo"
+    src=""
+    alt=""
+    hidden
+  >
+  </section>
+    <section class="surprise-panel">
+      <p class="eyebrow">Today's surprise</p>
+      <h3 id="surprise-title"></h3>
+      <p id="surprise-description"></p>
+      <a id="surprise-link" class="primary-link" href="#" target="_blank" rel="noopener" hidden>Open surprise ↗</a>
+      <video
+        id="surprise-video"
+        class="surprise-video"
+        controls
+        playsinline
+        preload="metadata"
+        hidden
+      >
+        Your browser does not support HTML video.
+      </video>
+      <iframe
+        id="surprise-youtube"
+        class="surprise-youtube"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        hidden>
+      </iframe>
+    </section>
+    <section class="challenge-panel" id="challenge-panel">
+      <div class="challenge-heading">
+        <div>
+          <p class="eyebrow">Optional extra</p>
+          <h3>Advent Challenge 🎄</h3>
+        </div>
+        <span class="optional-tag">Just for fun</span>
+      </div>
+      <p id="challenge-question"></p>
+      <div id="challenge-options" class="options"></div>
+      <button id="check-answer" class="secondary-button" disabled>Check my answer</button>
+      <p id="challenge-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+    <p class="made-by">made with ❤️‍🔥 by j-hope Hungary</p>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

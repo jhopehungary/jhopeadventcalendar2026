@@ -1,0 +1,314 @@
+:root {
+  --wine: #4b101b; --wine-2: #6b1d2b; --gold: #d9b66f; --cream: #fff8ed;
+  --ink: #32151a; --muted: #806c68; --line: rgba(217,182,111,.38);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cream);
+  background-color: #4b101b;
+  background-image:
+  url("images/christmas-background2.jpeg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.site-header { text-align: center; padding: 64px 20px 38px; }
+.eyebrow { margin: 0 0 9px; color: var(--gold); text-transform: uppercase; letter-spacing: .18em; font: 700 .7rem/1.4 Arial, sans-serif; }
+h1 { margin: 0; font-size: clamp(2.8rem, 8vw, 5.8rem); font-weight: 500; letter-spacing: -.045em; }
+h1 span { color: var(--gold); font-style: italic; }
+.subtitle { margin: 8px 0 0; color: #f3dcae; font-size: clamp(1.05rem, 3vw, 1.5rem); letter-spacing: .08em; }
+.intro { max-width: 540px; margin: 22px auto 0; color: #f4e5d7; font: 1rem/1.6 Arial, sans-serif; }
+main { width: min(1080px, calc(100% - 32px)); margin: 0 auto 60px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 16px 0 22px; }
+.section-heading h2 { margin: 0; font-size: clamp(1.45rem, 4vw, 2.1rem); font-weight: 500; }
+.progress { color: #f1dba9; font: .85rem Arial, sans-serif; white-space: nowrap; }
+.calendar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.door { position: relative; min-height: 132px; border: 1px solid var(--line); border-radius: 15px; padding: 15px 10px; color: var(--cream); background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.025)); cursor: pointer; transition: transform .18s ease, border-color .18s ease, background .18s ease; overflow: hidden; }
+.door:hover:not(:disabled) { transform: translateY(-4px); border-color: var(--gold); background: rgba(217,182,111,.13); }
+.door:disabled { opacity: .38; cursor: not-allowed; filter: grayscale(.6); }
+.door .number { display: block; color: var(--gold); font-size: 2rem; }
+.door .door-label { display: block; margin-top: 7px; font: .72rem Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.door.opened::after { content: '🎁'; position: absolute; right: 9px; top: 8px; font-size: .85rem; }
+.footer-note { margin: 34px 0; text-align: center; color: #c9aaa2; font: .75rem/1.5 Arial, sans-serif; }
+.day-dialog { width: min(680px, calc(100% - 24px)); max-height: min(88vh, 900px); overflow: auto; border: 1px solid var(--line); border-radius: 22px; padding: 34px; color: var(--ink); background: var(--cream); box-shadow: 0 24px 90px #16050a99; }
+.day-dialog::backdrop { background: rgba(18, 4, 8, .78); backdrop-filter: blur(5px); }
+.close-button { position: absolute; top: 12px; right: 16px; border: 0; background: transparent; color: var(--wine); font-size: 2rem; cursor: pointer; }
+.day-dialog h2 { margin: 0 28px 14px 0; color: var(--wine); font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 500; }
+.story { color: #5d4642; font: 1rem/1.7 Arial, sans-serif; }
+.surprise-panel, .challenge-panel { margin-top: 22px; border-radius: 16px; padding: 20px; background: #f2e8d9; }
+.surprise-panel h3, .challenge-panel h3 { margin: 0 0 8px; color: var(--wine); font-size: 1.35rem; }
+.surprise-panel p:not(.eyebrow), .challenge-panel p:not(.eyebrow) { color: #604b46; font: .94rem/1.6 Arial, sans-serif; }
+.primary-link, .secondary-button { display: inline-block; margin-top: 8px; border: 0; border-radius: 999px; padding: 11px 18px; color: white; background: var(--wine); text-decoration: none; font: 700 .85rem Arial, sans-serif; cursor: pointer; }
+.challenge-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.optional-tag { border: 1px solid #c6a96e; border-radius: 99px; padding: 6px 9px; color: #72551d; font: .7rem Arial, sans-serif; white-space: nowrap; }
+.options { display: grid; gap: 8px; margin: 14px 0; }
+.option { display: flex; align-items: center; gap: 10px; border: 1px solid #ddcdb8; border-radius: 10px; padding: 10px 12px; color: #493633; background: #fffaf2; font: .9rem Arial, sans-serif; cursor: pointer; }
+.option input { accent-color: var(--wine); }
+.secondary-button:disabled { opacity: .4; cursor: not-allowed; }
+.feedback { min-height: 1.4em; font-weight: 700 !important; }
+.made-by { margin: 24px 0 0; text-align: center; color: #8b7069; font: .75rem Arial, sans-serif; }
+@media (min-width: 760px) { .calendar { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 15px; } .door { min-height: 158px; } }
+@media (max-width: 420px) { .calendar { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; } .door { min-height: 112px; } .door .number { font-size: 1.7rem; } .day-dialog { padding: 28px 20px; } }
+
+/* Daily Christmas Photo */
+.photo-panel {
+  margin-top: 22px;
+  border-radius: 16px;
+  padding: 20px;
+  background: #f2e8d9;
+}
+
+.photo-panel .eyebrow {
+  color: #8b6a32;
+}
+
+.christmas-photo {
+  display: block;
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #e7dac8;
+}
+
+/* MP4 surprise video */
+.surprise-video {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  margin-top: 14px;
+  border-radius: 12px;
+  background: #1b1012;
+}
+
+.surprise-youtube {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 12px;
+  background: #1b1012;
+}
+
+/* Hide inactive surprise elements */
+#surprise-link[hidden],
+#surprise-video[hidden],
+#surprise-youtube[hidden] {
+  display: none !important;
+}
+
+/* Christmas snowfall */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -200px 0 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: .75;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255,248,237,.8) 1.5px, transparent 2.5px),
+    radial-gradient(circle, rgba(255,255,255,.65) 2px, transparent 3px);
+
+  background-size:
+    110px 150px,
+    190px 220px,
+    280px 310px;
+
+  background-position:
+    0 0,
+    40px 60px,
+    100px 30px;
+
+  animation: snowfall 18s linear infinite;
+}
+
+@keyframes snowfall {
+  from {
+    background-position:
+      0 -200px,
+      40px -160px,
+      100px -280px;
+  }
+  to {
+    background-position:
+      80px 1000px,
+      -60px 900px,
+      180px 1100px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+
+.door {
+  box-shadow:
+    inset 0 0 25px rgba(217,182,111,.04),
+    0 4px 18px rgba(0,0,0,.15);
+}
+
+.door:hover:not(:disabled) {
+  box-shadow:
+    0 0 18px rgba(217,182,111,.3),
+    inset 0 0 25px rgba(217,182,111,.12);
+}
+
+
+/* CHRISTMAS ATMOSPHERE */
+
+
+
+/* Falling snow */
+.snow-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: .8;
+  background-image:
+    radial-gradient(circle, #fff 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255,248,237,.9) 1.5px, transparent 2.5px),
+    radial-gradient(circle, rgba(255,255,255,.7) 2px, transparent 3px);
+  background-size: 110px 150px, 190px 220px, 280px 310px;
+  background-position: 0 0, 40px 60px, 100px 30px;
+  animation: snowfall 18s linear infinite;
+}
+
+@keyframes snowfall {
+  from {
+    background-position: 0 -200px, 40px -160px, 100px -280px;
+  }
+  to {
+    background-position: 80px 1000px, -60px 900px, 180px 1100px;
+  }
+}
+
+/* Decorative Christmas branches */
+.christmas-decor {
+  position: fixed;
+  top: 0;
+  width: 170px;
+  height: 340px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .65;
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(217,182,111,.45), transparent 3%),
+    radial-gradient(ellipse at 40% 35%, rgba(217,182,111,.35), transparent 3%),
+    radial-gradient(ellipse at 60% 55%, rgba(217,182,111,.3), transparent 3%),
+    linear-gradient(135deg, transparent 45%, rgba(30,75,43,.5) 46%, transparent 48%);
+}
+
+.christmas-decor-left {
+  left: 0;
+  transform: rotate(-12deg);
+}
+
+.christmas-decor-right {
+  right: 0;
+  transform: scaleX(-1) rotate(-12deg);
+}
+
+/* Make sure content stays above decorations */
+.site-header,
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Golden glow around calendar doors */
+.door {
+  box-shadow:
+    inset 0 0 25px rgba(217,182,111,.04),
+    0 4px 18px rgba(0,0,0,.15);
+}
+
+.door:hover:not(:disabled) {
+  box-shadow:
+    0 0 18px rgba(217,182,111,.3),
+    inset 0 0 25px rgba(217,182,111,.12);
+}
+
+/* Keep the dialog above the snowfall */
+.day-dialog {
+  position: fixed;
+  z-index: 100;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .christmas-decor {
+    width: 75px;
+    height: 200px;
+    opacity: .3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snow-layer {
+    animation: none;
+  }
+}
+
+/* Festive typography */
+.site-header {
+  padding-top: 64px;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  letter-spacing: -.045em;
+}
+
+h1 span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: clamp(.9rem, 2.5vw, 1.4rem);
+}
+
+.intro {
+  max-width: 620px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.christmas-greeting {
+  color: var(--gold);
+  font: 700 .9rem/1.6 Georgia, serif;
+  letter-spacing: .18em;
+  margin-bottom: 18px;
+}
+
+.footer-note {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+/* Stronger calendar door typography */
+.door .number {
+  font-weight: 700;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .45);
+}
+
+.door .door-label {
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}

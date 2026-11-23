@@ -1,0 +1,23 @@
+
+{
+  "day": 1,
+  "title": "The Boy from Gwangju",
+  "story": "Before the world knew him as j-hope, he was Jung Hoseok, a boy growing up in Gwangju, South Korea. Born on February 18, 1994, he spent his childhood in the city that would always remain an important part of his story. His early years helped shape the person he would become, and it was in Gwangju that his passion for dance began to grow. This is where the story of j-hope starts - long before the stage lights, the music, and the millions of fans around the world.",
+  "christmasImage": "images/1.jpg",
+  "surpriseTitle": "From Baby Hoseok to j-hope",
+  "surpriseDescription": "A little journey through time! Watch Hoseok grow from an adorable little boy into the artist we know and love today.",
+  "surpriseUrl": "videos/1_j-hope_life_v2.mp4",
+  "surpriseLabel": "Watch",
+  "challenge": {
+    "enabled": true,
+    "question": "In which South Korean city was j-hope born?",
+    "options": [
+      "Seoul",
+      "Gwangju",
+      "Busan"
+    ],
+    "answer": "Gwangju",
+    "explanation": "Jung Hoseok was born on February 18, 1994, in Gwangju, South Korea."
+  }
+}
+

@@ -1,0 +1,22 @@
+
+{
+  "day": 2,
+  "title": "Born to Dance",
+  "story": "For Jung Hoseok, dancing was never just an after-school activity. What started as a childhood fascination gradually became the passion that would shape his entire future.\n\nAfter discovering how much he loved dancing, Hoseok began practicing at home and looking for every opportunity to improve. He also performed at local school talent shows, where he discovered the excitement of dancing in front of an audience.\n\nBy the sixth grade, he was serious about pursuing dance. His parents helped him enroll at Joy Dance Academy in Gwangju, where he could develop his skills and learn from more experienced dancers.\n\nBut his journey wasn't always easy. During a difficult financial period for his family, Hoseok could no longer afford regular dance lessons. However, giving up wasn't an option for him. He continued going to the academy, dancing during breaks and asking other students what they had learned in class so he could keep practicing and learning.\n\nHis dedication did not go unnoticed. The dancers who taught and trained at the academy saw how much he wanted to dance. Eventually, members of the Gwangju-based underground dance crew NEURON invited him to join them.\n\nThat invitation opened a new chapter in his life. He was no longer just a young boy taking dance lessons. He had found a community where he could learn, grow, and devote himself even more deeply to dance.\n\nThe journey that began with a child copying dance videos at school had taken him somewhere he had never imagined.\n\nSometimes, all it takes is a passion you refuse to give up on.",
+  "christmasImage": "images/2.jpg",
+  "surpriseTitle": "The Little Dancer from Gwangju",
+  "surpriseDescription": "Even as a child, Hoseok had a special connection with dance. Take a look at the young boy who was already following his passion in Gwangju.",
+  "surpriseUrl": "videos/1_dance_academy.mp4",
+  "surpriseLabel": "Watch / listen",
+  "challenge": {
+    "enabled": true,
+    "question": "What did Hoseok do when he could no longer afford regular dance lessons?",
+    "options": [
+      "He stopped going to the academy.",
+      "He continued visiting the academy, dancing during breaks and learning from other students.",
+      "He immediately moved to Seoul."
+    ],
+    "answer": "He continued visiting the academy, dancing during breaks and learning from other students.",
+    "explanation": "Even when his family could no longer afford lessons, Hoseok kept going to the academy. He danced during breaks and asked other students what they had learned so he could continue improving."
+  }
+}
