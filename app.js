@@ -7,9 +7,30 @@ const openedDays = new Set(JSON.parse(localStorage.getItem('jhopeOpenedDays') ||
 let currentDay = null;
 let selectedAnswer = null;
 
-const today = new Date();
-const isDecember = today.getMonth() === 11;
-const unlockedThrough = isDecember ? today.getDate() : 24; // For testing, set this to 24 temporarily.
+function getUnlockedThrough() {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Budapest',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).formatToParts(new Date());
+
+  const dateParts = Object.fromEntries(
+    parts.map(part => [part.type, part.value])
+  );
+
+  const dateKey = Number(
+  `${dateParts.year}${dateParts.month}${dateParts.day}`
+  );
+
+  const firstDay = 20261201;
+  const lastDay = 20261224;
+
+  if (dateKey < firstDay) return 0;
+  if (dateKey > lastDay) return 24;
+
+  return Number(dateParts.day);
+}
 
 function shuffledDays() {
   const days = Array.from({ length: 24 }, (_, i) => i + 1);
@@ -22,6 +43,7 @@ function shuffledDays() {
 
 function renderCalendar() {
   calendar.innerHTML = '';
+  const unlockedThrough = getUnlockedThrough();
   shuffledDays().forEach(day => {
     const button = document.createElement('button');
     button.className = 'door' + (openedDays.has(day) ? ' opened' : '');
@@ -98,7 +120,34 @@ async function openDay(day) {
 
     document.getElementById('day-number').textContent = `DAY ${String(day).padStart(2, '0')}`;
     document.getElementById('day-title').textContent = data.title;
-    document.getElementById('day-story').textContent = data.story;
+    const storyElement = document.getElementById('day-story');
+
+    const escapeHtml = (text) => text.replace(/[&<>"']/g, char => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    })[char]);
+
+    const formatText = (text) => {
+      return escapeHtml(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    };
+
+    storyElement.innerHTML = data.story
+      .split(/\n\s*\n/)
+      .map(block => {
+        const text = block.trim();
+
+        if (!text) return '';
+
+        if (text === text.toUpperCase() && /[A-Z]/.test(text)) {
+          return `<h3 class="story-heading">${escapeHtml(text)}</h3>`;
+        }
+
+        return `<p>${formatText(text)}</p>`;
+      })
+      .join('');
 
     // Daily Christmas Photo
     const photoPanel = document.getElementById('photo-panel');
